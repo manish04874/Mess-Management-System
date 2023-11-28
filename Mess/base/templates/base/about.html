@@ -1,0 +1,81 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-lg">
+    <h1 class="text-3xl font-bold mb-4">Meal Management System</h1>
+    <p class="text-gray-700 mb-8">The Meal Management System is an innovative web application designed to streamline the process of managing meals for various categories, providing users with a convenient and personalized dining experience. The system employs a user-centric approach, allowing individuals to select meals based on their dietary preferences, view daily plans, and even track their attendance. With a robust backend and an intuitive user interface, the Meal Management System aims to revolutionize how people approach their daily meals.</p>
+
+    <h2 class="text-2xl font-bold mb-4">Technology Stack</h2>
+    <ul class="list-disc pl-4 mb-8">
+        <li>Django Framework: A high-level Python web framework that encourages rapid development and clean, pragmatic design. Django provides robust features for authentication, database management, and server-side logic.</li>
+        <li>HTML/CSS: Standard web technologies for creating the structure and styling of the user interface.</li>
+        <li>Tailwind CSS: A utility-first CSS framework that allows for rapid UI development with pre-defined styles and components.</li>
+        <li>MySQL Database: A powerful relational database management system that efficiently handles data storage and retrieval.</li>
+        <li>JavaScript (optional): Used for client-side interactivity and dynamic content, enhancing user experience.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4">Functional Requirements</h2>
+    <ul class="list-disc pl-4 mb-8">
+        <li class="mb-4">
+            <span class="font-bold">User Authentication and Authorization:</span> Users can register, log in, and log out of their accounts. Different levels of access based on user roles (e.g., admin, regular user).
+        </li>
+        <li class="mb-4">
+            <span class="font-bold">Meal Selection and Categorization:</span> Users can browse and select meals from various categories (e.g., breakfast, lunch, dinner). Each meal is associated with a category and may have additional details such as an image and description.
+        </li>
+        <li>
+            <span class="font-bold">Daily Meal Plans:</span> Users can view personalized daily meal plans based on their selected categories and preferences. The system generates meal plans considering dietary restrictions and preferences.
+        </li>
+        <li>
+            <span class="font-bold">Attendance Tracking:</span>Users can track their attendance for meals, providing insights into their meal consumption patterns. Each attendance record includes the date and associated category.
+        </li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4">Feedback Submission:</h2>
+    <p class="text-gray-700 mb-8">Users can submit feedback about their meal experiences, allowing for continuous improvement of the system. Feedback includes the user's name, email, and comments.</p>
+
+    <h2 class="text-2xl font-bold mb-4">Admin Dashboard:</h2>
+    <p class="text-gray-700 mb-8">Admin users have access to a dashboard for managing categories, meals, and user accounts. Admins can view and analyze feedback submitted by users.</p>
+
+    <h2 class="text-2xl font-bold mb-4">Non-Functional Requirements:</h2>
+    <ul class="list-disc pl-4 mb-8">
+        <li class="mb-4">
+            <span class="font-bold">Security:</span> The system employs robust authentication and authorization mechanisms to ensure data security. Passwords are stored securely using cryptographic hash functions.
+        </li>
+        <li class="mb-4">
+            <span class="font-bold">Performance:</span> The system is optimized for performance to handle a large number of users and data records. Database queries are optimized to ensure fast retrieval of information.
+        </li>
+        <li class="mb-4">
+            <span class="font-bold">User Interface (UI) Design:</span> The UI is designed with a user-friendly and intuitive layout to enhance the user experience. Tailwind CSS is used to create a clean, responsive, and visually appealing interface.
+        </li>
+        <li>
+            <span class="font-bold">Scalability:</span> The architecture is designed to accommodate future growth in both user base and data volume. Horizontal scaling options are explored for increased capacity.
+        </li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4">Hardware and Software Requirements:</h2>
+    <div class="mb-8">
+        <span class="font-bold">Developer Environment:</span>
+        <ul class="list-disc pl-4">
+            <li>A modern computer or laptop with at least 8GB of RAM.</li>
+            <li>Operating System: Windows, macOS, or Linux.</li>
+            <li>Code Editor/IDE: Visual Studio Code, PyCharm, or any preferred Python IDE.</li>
+            <li>Python 3.x installed.</li>
+            <li>MySQL Server and client installed.</li>
+        </ul>
+    </div>
+    <div class="mb-8">
+        <span class="font-bold">Client Environment:</span>
+        <ul class="list-disc pl-4">
+            <li>Any device with a modern web browser (e.g., Chrome, Firefox, Safari).</li>
+            <li>Internet connectivity for accessing the web application.</li>
+        </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4">Deployment Details:</h2>
+    <p class="text-gray-700 mb-8">The application can be deployed on a web server using a platform-as-a-service (PaaS) provider like Heroku, AWS, or DigitalOcean. A domain name can be registered and configured to point to the server's IP address for easy access.</p>
+
+    <h2 class="text-2xl font-bold mb-4">Conclusion:</h2>
+    <p class="text-gray-700 mb-8">The Meal Management System is a comprehensive web application designed to enhance the meal planning and tracking experience for users. With its intuitive interface, personalized meal plans, and attendance tracking, the system aims to simplify the process of managing daily meals. The utilization of modern technologies ensures a robust, scalable, and user-friendly solution. The project holds great potential for widespread adoption and positive impact on individuals seeking a convenient and customized approach to their meals.</p>
+</div>
+
+{% endblock %}

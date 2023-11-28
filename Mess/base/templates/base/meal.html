@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+<div class=" px-6 py-12 bg-gray-100 rounded-lg">
+    <h2 class="mb-12 text-2xl text-center">Our Meals</h2>
+    <div class="flex items-center justify-center mb-6">
+
+        <div class="flex items-center justify-center mb-6">
+            <form method="get" action="{% url 'mealss' %}">
+                <select name="category" class="p-2 border rounded">
+                    <option value="" {% if not request.GET.category %}selected{% endif %}>All Categories</option>
+                    {% for category in categories %}
+                        <option value="{{ category.name }}" {% if request.GET.category == category.name %}selected{% endif %}>{{ category.name }}</option>
+                        
+                    {% endfor %}
+                  
+
+                </select>
+                {% for category in categories %}
+                
+                <a href="{% url 'buy_meal' category.id %}"><h1>Buy Now for {{ category.name }}</h1></a>
+
+            {% endfor %}
+                <button type="submit" class="p-2 ml-2 bg-blue-500 text-white rounded">Filter</button>
+            </form>
+         </div>
+
+
+     </div>
+
+    <div class="grid grid-cols-2 gap-6">
+        {% for item in meals %}
+            <a href="{% url 'detail' item.id %}" class="block border rounded-lg overflow-hidden hover:shadow-md">
+                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="w-full h-46 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">{{ item.name }}</h2>
+                    <p class="text-gray-500">{{ item.description }}</p>
+
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock content %}

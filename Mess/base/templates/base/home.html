@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <section class="flex justify-center items-center h-screen">
+        <div class="bg-white p-8 rounded shadow-lg">
+            <h1 class="text-3xl mb-4">Welcome to our Mess Management System</h1>
+            <form action="{% url 'search' %}" method="GET">
+                <label class="block mb-2 text-gray-800">Search for meals:</label>
+                <div class="flex">
+                    <input type="text" name="query" class="py-2 px-3 border rounded-l w-full" placeholder="Enter a meal name">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r">Search</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-lg">
+        <h2 class="mb-12 text-2xl text-center">Our Meals</h2>
+    
+        <div class="grid grid-cols-3 gazp-6">
+            {% for item in meals|slice:":3"  %}
+                <a href="{% url 'detail' item.id %}" class="block border rounded-lg overflow-hidden hover:shadow-md">
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold mb-2">{{ item.name }}</h2>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-lg">
+        <h2 class="mb-12 text-2xl text-center">Daily Plan</h2>
+    
+        <div class="grid grid-cols-3 gap-6">
+            {% for category in categories %}
+                <a href="{% url 'mealss' %}" class="block border rounded-lg overflow-hidden hover:shadow-md">
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold mb-2">{{ category.name }}</h2>
+                        <p class="text-gray-500">{{category.meals.count }} Meals</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+{% endblock content %}

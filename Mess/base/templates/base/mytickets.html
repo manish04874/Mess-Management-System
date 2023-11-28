@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <div class="container mx-auto p-8">
+    <h1 class="text-3xl text-white font-bold mb-6">Meal Tickets</h1>
+
+    <div class="grid gap-4">
+        {% for ticket in meal_tickets reversed %}
+            {% if user.is_authenticated %}
+                {% if ticket.user == user %}
+                    <div class="bg-white p-4 shadow-md rounded-lg mb-4">
+                        <p class="text-lg font-bold mb-2">User: {{ ticket.user.username }}</p>
+                        <p class="text-gray-700 mb-2">Category: {{ ticket.category.name }}</p>
+                        <p class="text-gray-700">Date: {{ ticket.date }}</p>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+{% endblock %}
